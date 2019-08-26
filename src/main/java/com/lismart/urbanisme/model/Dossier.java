@@ -10,7 +10,7 @@ public class Dossier {
 
 	@Id @GeneratedValue
 	private Long id;
-	private Long numero;
+	private String numero;
 	private String etat;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date_depot;
@@ -33,14 +33,14 @@ public class Dossier {
 
 	public Dossier() {
 	}
-	public Dossier(Long numero, String etat, Date date_depot) {
+	public Dossier(String numero, String etat, Date date_depot) {
 		super();
 		this.numero = numero;
 		this.etat = etat;
 		this.date_depot = date_depot;
 	}
 	
-	public Dossier(Long numero, String etat, Date date_depot, Demande demande, Projet projet, Set<Document> documents,
+	public Dossier(String numero, String etat, Date date_depot, Demande demande, Projet projet, Set<Document> documents,
 			Set<Bordereau> bordereaux) {
 		super();
 		this.numero = numero;
@@ -57,10 +57,10 @@ public class Dossier {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getNumero() {
+	public String getNumero() {
 		return numero;
 	}
-	public void setNumero(Long numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 	public String getEtat() {

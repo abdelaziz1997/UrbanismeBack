@@ -12,9 +12,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Demande {
 
 	@Id @GeneratedValue
@@ -27,6 +30,7 @@ public class Demande {
 	
 	@ManyToOne
     @JoinColumn(name = "demandeur")
+	@JsonBackReference
 	private Demandeur demandeur;
 	
 	@ManyToOne

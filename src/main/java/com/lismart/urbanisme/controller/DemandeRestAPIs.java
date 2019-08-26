@@ -26,6 +26,7 @@ public class DemandeRestAPIs {
 	
 	@RequestMapping(value="/demandes")
 	public List<Demande> listDemandes(){
+		System.out.println(demandeService.retreiveDemandes());
 		return demandeService.retreiveDemandes();
 	}
 	

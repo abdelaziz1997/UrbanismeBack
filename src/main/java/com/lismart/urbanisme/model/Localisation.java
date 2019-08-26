@@ -7,8 +7,8 @@ public class Localisation {
 
 	@Id @GeneratedValue
 	private Long id;
-	private String adresse;
-	
+	private String adresse_ar;
+	private String adresse_fr;
 	@OneToOne(fetch = FetchType.LAZY,
 	            cascade =  CascadeType.ALL,
 	            mappedBy = "localisation")
@@ -20,14 +20,17 @@ public class Localisation {
 	
 	public Localisation() {
 	}
-	public Localisation(String adresse) {
+	public Localisation(String adresse_ar,String adresse_fr) {
 		super();
-		this.adresse = adresse;
+		this.adresse_ar = adresse_ar;
+		this.adresse_fr = adresse_fr;
 	}
 	
-	public Localisation(String adresse, Projet projet, Surface surface) {
+	
+	public Localisation(String adresse_ar,String adresse_fr, Projet projet, Surface surface) {
 		super();
-		this.adresse = adresse;
+		this.adresse_ar = adresse_ar;
+		this.adresse_fr = adresse_fr;
 		this.projet = projet;
 		this.surface = surface;
 	}
@@ -36,12 +39,6 @@ public class Localisation {
 	}
 	public void setId(Long id) {
 		this.id = id;
-	}
-	public String getAdresse() {
-		return adresse;
-	}
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
 	}
 	public Projet getProjet() {
 		return projet;
@@ -54,6 +51,18 @@ public class Localisation {
 	}
 	public void setSurface(Surface surface) {
 		this.surface = surface;
+	}
+	public String getAdresse_ar() {
+		return adresse_ar;
+	}
+	public void setAdresse_ar(String adresse_ar) {
+		this.adresse_ar = adresse_ar;
+	}
+	public String getAdresse_fr() {
+		return adresse_fr;
+	}
+	public void setAdresse_fr(String adresse_fr) {
+		this.adresse_fr = adresse_fr;
 	}
 	
 	

@@ -19,6 +19,7 @@ public class PersonneMorale extends Proprietaire {
 	private String raisonSociale;
 	private String RC;
 	private String ICE;
+	private String IF;
 	private String patante;
 	private String adresse;
 	private String codePostal;
@@ -35,16 +36,17 @@ public class PersonneMorale extends Proprietaire {
 	public PersonneMorale() {
 	}
 	public PersonneMorale(String raisonSociale, String rC, String iCE, String patante, String adresse,
-			String codePostal, String ville, String pays) {
+			String codePostal, String ville, String pays, String IF) {
 		super();
 		this.raisonSociale = raisonSociale;
-		RC = rC;
-		ICE = iCE;
+		this.RC = rC;
+		this.ICE = iCE;
 		this.patante = patante;
 		this.adresse = adresse;
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.pays = pays;
+		this.IF = IF;
 	}
 
 	public PersonneMorale(String raisonSociale, String rC, String iCE, String patante, String adresse,
@@ -114,5 +116,11 @@ public class PersonneMorale extends Proprietaire {
 	}
 	public void setRepresentant(Set<PersonnePhysique> representant) {
 		this.representantMorPhy = representant;
+	}
+	public String getIF() {
+		return IF;
+	}
+	public void setIF(String iF) {
+		IF = iF;
 	}
 }

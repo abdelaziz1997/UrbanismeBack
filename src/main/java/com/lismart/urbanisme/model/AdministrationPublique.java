@@ -11,6 +11,7 @@ public class AdministrationPublique extends Proprietaire {
 
 	
 	private String denomination;
+	private String qualiteAdm;
 	
 	@ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(name = "adm_phy", 
@@ -41,6 +42,12 @@ public class AdministrationPublique extends Proprietaire {
 	}
 	public void setPersonnePhysiques(Set<PersonnePhysique> representant) {
 		this.representantAdmPhy = representant;
+	}
+	public String getQualiteAdm() {
+		return qualiteAdm;
+	}
+	public void setQualiteAdm(String qualiteAdm) {
+		this.qualiteAdm = qualiteAdm;
 	}
 	
 }

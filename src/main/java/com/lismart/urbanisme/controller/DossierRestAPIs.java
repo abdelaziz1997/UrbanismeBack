@@ -31,11 +31,11 @@ public class DossierRestAPIs {
 	@PreAuthorize("hasRole('ROLE_DIRECTEUR') or hasRole('ROLE_CHEF_SRV')")
 	public Dossier saveDossier(@RequestBody Dossier dossier) {
 		//dossier.get
-//		Demandeur demandeur = new Demandeur(f.getNomDemandeur_ar(), f.getNomDemandeur_fr(), f.getPreDemandeur_ar(), f.getPreDemandeur_fr(), f.getQualite_ar(), f.getQualite_fr());
-//		Demande demande = new Demande(f.getReference(),f.getDate_depot(), f.getStatus(), f.getPlan());
-//		demande.setDemandeur(demandeur);
-//		demandeur.getDemandes().add(demande);
-//		return demandeService.saveDemandeur(demandeur);
-		return null;
+		Demandeur demandeur = new Demandeur(f.getNomDemandeur_ar(), f.getNomDemandeur_fr(), f.getPreDemandeur_ar(), f.getPreDemandeur_fr(), f.getQualite_ar(), f.getQualite_fr());
+		Demande demande = new Demande(f.getReference(),f.getDate_depot(), f.getStatus(), f.getPlan());
+		demande.setDemandeur(demandeur);
+		demandeur.getDemandes().add(demande);
+		return demandeService.saveDemandeur(demandeur);
+		//return null;
 	}
 }
